@@ -92,6 +92,44 @@
   .offer__details.active {
     @apply block;
   }
+  /* our story */
+  .story {
+    @apply py-10;
+  }
+  .story__wrapper {
+    @apply lg:flex items-center justify-evenly;
+  }
+  .story h3 {
+    @apply font-bold text-center text-4xl mb-5;
+  }
+  .story__content {
+    @apply text-justify;
+  }
+  .story__item {
+    @apply mb-5 max-w-[35rem] mx-auto;
+  }
+  .story__item h4,
+  .story__item i {
+    @apply bg-primary text-white px-3 py-2 font-bold
+    flex justify-between items-center cursor-pointer;
+  }
+  .story__item i.open {
+    @apply rotate-180 duration-700;
+  }
+  .story__item p {
+    @apply bg-slate-50 h-auto max-h-0 overflow-hidden duration-300;
+  }
+  .story__item p.open {
+    @apply max-h-[50rem] bg-slate-50 p-3 duration-300;
+  }
+  .story__img {
+    @apply hidden
+    /* desktop */
+    lg:block;
+  }
+  .story__img img {
+    @apply lg:rounded-3xl;
+  }
 }
 @layer components {
   /* Header */
@@ -149,14 +187,14 @@
     text-center font-semibold text-primary leading-3;
   }
   /* connect */
-  .connect{
+  .connect {
     @apply bg-primary text-white py-10
     /* desktop */
     lg:pt-5 lg:pb-0;
   }
   .connect__wrapper {
     @apply flex flex-col items-center
-    justify-center text-center
+    justify-center text-center py-8
     /* desktop */
     lg:flex-row;
   }
@@ -192,56 +230,186 @@
   .footer__details h3 {
     @apply font-bold text-2xl;
   }
-  }
-  .footer__details h3 {
-    @apply font-bold text-2xl;
-  }
+}
+.footer__details h3 {
+  @apply font-bold text-2xl;
+}
 
 /* About Page */
-  .aboutHistory__video iframe{
-    @apply w-[25rem] h-[20rem];
-  }
-  .aboutHistory__wrapper{
-    @apply flex flex-col items-center;
-  }
-  .aboutHistory__text h2{
-    @apply text-5xl text-primary font-bold ;
-  }
-  .aboutHistory__text{
-    @apply pt-11
-  }
-  
-  /* Client Review */
-  .aboutReview__wrapper{
-    @apply text-center;
-  }
-  .aboutReview__card{
-    @apply  flex items-center flex-col gap-6
-  }
-  .aboutReview__img img{
-    @apply rounded-full w-[5rem] mx-auto ;
-  }
-  .aboutReview__text p:last-child{
-    @apply pt-5;
-  }
+.aboutHistory {
+  @apply lg:py-[9rem];
+}
+.aboutHistory__video iframe {
+  @apply w-[25rem] h-[20rem]
+    /* desktop */
+    lg:w-[45rem] lg:h-[35rem];
+}
+.aboutHistory__wrapper {
+  @apply flex flex-col items-center
+    /* desktop */
+    lg:flex-row gap-10;
+}
+.aboutHistory__text h2 {
+  @apply text-[3rem] text-primary font-bold leading-[3rem];
+}
+.aboutHistory__text {
+  @apply pt-11 
+    /* desktop */
+    lg:w-[200rem];
+}
+.aboutHistory__text p {
+  @apply lg:w-[35rem] pt-4;
+}
+
+/* Client Review */
+.aboutReview__wrapper {
+  @apply text-center;
+}
+.aboutReview__card {
+  @apply flex items-center flex-col gap-6;
+}
+.aboutReview__img img {
+  @apply rounded-full w-[5rem] mx-auto 
+    /* desktop */
+    lg:pt-8;
+}
+.aboutReview__text p:last-child {
+  @apply pt-5;
+}
+.aboutReview__title h3 {
+  @apply text-3xl font-bold;
+}
+.aboutReview__text p:first-child {
+  @apply lg:w-[45rem] mx-auto pt-8;
+}
+/* Menu */
+/* Banner */
+.menuBanner {
+  @apply bg-menu bg-no-repeat bg-cover h-screen;
+}
+.menuBanner__wrapper {
+  @apply pt-[25rem];
+}
+.menuBanner__wrapper h2 {
+  @apply text-white text-3xl font-bold w-[15rem] mx-auto
+    /* desktop */
+    lg:w-[60rem] lg:text-7xl lg:text-center;
+}
+/* Menu list */
+.menu {
+  @apply py-10 bg-tertiary text-white;
+}
+.menu__wrapper {
+  @apply flex flex-col justify-center items-center
+  /* desktop */
+  lg:gap-10;
+}
+.menu__type {
+  @apply flex items-center gap-4 bg-secondary rounded-3xl py-4 mb-4 px-[2rem]
+  /* desktop */
+  lg:w-[47rem] lg:m-auto;
+}
+.menu__type ul span {
+  @apply h-[20px] w-[1px] block bg-white;
+}
+.menu__type ul {
+  @apply flex gap-3 items-center
+  /* desktop */
+  lg:m-auto gap-10;
+}
+.menu__type ul li.active {
+  @apply text-primary;
+}
+.menu__type ul li {
+  @apply text-tertiary font-bold hover:text-primary cursor-pointer;
+}
+.menu__details--wrap {
+  @apply grid grid-cols-3 gap-3;
+}
+.menu__foods {
+  @apply flex flex-col items-center justify-center text-center pt-[3rem]
+    /* desktop */
+    lg:border lg:py-5 lg:px-10 lg:rounded-xl;
+}
+.menu__foods img {
+  @apply w-40;
+}
+.menu__details {
+  @apply hidden;
+}
+.menu__details.active {
+  @apply block;
+}
+/* Contact */
+/* Map */
+.contactMap{
+  @apply py-[10rem];
+}
+.contactMap__wrapper{
+  @apply flex justify-center;
+}
+.contactMap__gmap iframe{
+  @apply w-[25rem] h-[40rem]
+  /* desktop */
+  lg:w-[70rem];
+}
+
+/* Form */
+.contactForm{
+  @apply bg-secondary py-[10rem];
+}
+.contactForm__wrapper{
+  @apply max-w-[50rem] mx-auto text-center;
+}
+.contactForm h2{
+  @apply text-5xl font-bold mb-[5rem];
+}
+.contactForm__content{
+  @apply flex flex-col gap-[1rem];
+}
+.contactForm__content input{
+  @apply p-[0.8rem] rounded-2xl
+  /* desktop */
+  lg:w-full;
+}
+.contactForm__flName{
+  @apply flex  gap-[1rem];
+}
+.contactForm__flName input{
+  @apply w-[13.5rem]
+  /* desktop */
+  lg:w-full;
+}
+.contactForm__content textarea{
+  @apply rounded-2xl p-[1rem] resize-none h-[10rem]
+  /* desktop */
+  lg:w-full;
+}
+.contactForm__btn{
+  @apply mt-[2rem];
+}
+.contactForm__btn a{
+  @apply text-white  bg-primary px-[1rem] rounded-xl py-[0.5rem];
+}
 
 
 
-  /* Button */
-  .btn {
-    @apply py-2 px-4 bg-transparent border border-transparent
+
+/* Button */
+.btn {
+  @apply py-2 px-4 bg-transparent border border-transparent
     rounded-xl;
-  }
-  .btn.bg--primary {
-    @apply bg-primary border border-primary text-white
+}
+.btn.bg--primary {
+  @apply bg-primary border border-primary text-white
     hover:bg-transparent hover:text-primary;
-  }
-  .btn.readmore {
-    @apply border border-primary hover:bg-primary;
-  }
-  .btn.bg--secondary {
-    @apply bg-secondary text-black hover:border hover:border-secondary;
-  }
+}
+.btn.readmore {
+  @apply border border-primary hover:bg-primary;
+}
+.btn.bg--secondary {
+  @apply bg-secondary text-black hover:border hover:border-secondary;
+}
 
 @layer utilities {
 }
